@@ -2,7 +2,7 @@ import {createStore,applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {createLogger} from 'redux-logger';
 import promiseMiddleware from 'redux-promise-middleware';
-//import reducers from '../reducer';
+import reducers from '../reducer';
 
 const middleware = [ thunk, promiseMiddleware() ]
 	if ( process.env.NODE_ENV !=='live' ) {
@@ -10,7 +10,7 @@ const middleware = [ thunk, promiseMiddleware() ]
 	}
 
 const store = createStore(
-//	reducers, 
+	reducers, 
 	applyMiddleware(...middleware) )
 
 export default store
