@@ -47,7 +47,7 @@ class Log extends Component {
 				</Text>
 
 				<View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
-					<Image source={require('./googleplay.jpg')} style={{resizeMode:'contain',width:'50%',height:'50%'}} />
+					<Image source={require('./android.jpg')} style={{resizeMode:'contain',width:'50%',height:'50%'}} />
 				</View>
 
 				{this.state.messageSuccess !=='' && 
