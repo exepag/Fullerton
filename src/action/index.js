@@ -30,7 +30,11 @@ console.log(dataUser)
 		const {email,password} = dataUser
 		console.log(email,password)
 
-		if (email !=='' && password !=='') {
+		if (
+			//dataUser.
+			email !=='' && 
+			//dataUser.
+			password !=='') {
 			const dataPayloads = { "email":email , "password":password }
 
 			const url = `${BASE_API_URL}/Users`
@@ -90,8 +94,48 @@ console.log(dataUser)
 
 
 
+export const FETCH_PRODUCTS = 'FETCH_PRODUCTS'
+export const fetchProducts = () => {
+	return {
+		type: FETCH_PRODUCTS,
+		payload: getProducts()
+	}
+}
+
+	const getProducts = () => {
+		const url = `${BASE_API_URL}/shoppinglists`
+		return axios.get(url)
+			.then(res => {
+				return res
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}
 
 
+
+
+
+export const FETCH_DATA_DETAILS = 'FETCH_DATA_DETAILS'
+export const fetchDataDetails = (id) => {
+	return {
+		type: FETCH_DATA_DETAILS,
+		payload: getDataDetails(id)
+	}
+}
+
+const getDataDetails = async (id) => {
+	const url_api = `${BASE_API_URL}/shoppinglists/${id}`
+	return axios.get(url_api)
+		.then(res => {
+		  console.log(res)
+			return res
+		})
+		.catch(err => {
+		  console.log(err)
+		})
+}
 
 
 
