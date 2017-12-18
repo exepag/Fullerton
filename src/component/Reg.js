@@ -4,7 +4,8 @@ View,
 Text,
 TextInput,
 ActivityIndicator,
-TouchableOpacity
+TouchableOpacity,
+Image
 } from 'react-native';
 import axios from 'axios';
 import {connect} from 'react-redux';
@@ -35,16 +36,19 @@ class Reg extends Component {
 		const {isFetching , status} = this.props
 
 		return (
-			<View style={{flex:1,backgroundColor:'white'}} >
+			<View style={{flex:1,backgroundColor:'gainsboro'}} >
 
 				{isFetching && ( <ActivityIndicator size="large" color="gray" /> ) }
 				<Text>{status}</Text>
 
 
-				<Text style={{marginLeft:40,marginTop:40,fontSize:25,fontWeight:'bold',color:'peru'}} > 
+				<Text style={{marginLeft:40,marginTop:40,fontSize:25,fontWeight:'bold',color:'goldenrod'}} > 
 					Registration Form
 				</Text>
 
+				<View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
+					<Image source={require('./redux.png')} style={{resizeMode:'contain',width:'60%',height:'60%'}} />
+				</View>
 
 				{this.state.messageSuccess !=='' &&
 					<Text style={{color:'green'}} >
@@ -59,7 +63,7 @@ class Reg extends Component {
 				}
 
 
-				<View style={{marginLeft:40,marginTop:100}} >
+				<View style={{marginLeft:40,marginTop:0}} >
 
 					<TextInput style={{color:'black',width:'70%',fontSize:18}} placeholder="Email"	
 
@@ -72,7 +76,7 @@ class Reg extends Component {
 				</View>
 
 
-				<View style={{flex:1,backgroundColor:'grey',marginTop:120}} >
+				<View style={{flex:1,backgroundColor:'indigo',marginTop:100}} >
 
 					<View style={{flexDirection:'row',marginLeft:40,marginTop:50}} >
 
@@ -85,7 +89,7 @@ class Reg extends Component {
 
 						</TouchableOpacity>
 
-						<TouchableOpacity style={{backgroundColor:'black',width:'40%',borderRadius:5,marginLeft:25}} 
+						<TouchableOpacity style={{backgroundColor:'grey',width:'40%',borderRadius:5,marginLeft:25}} 
 						onPress={ () => this.props.navigation.goBack() } >
 
 							<Text style={{textAlign:'center',color:'white',margin:10,fontWeight:'500',fontSize:20}} >

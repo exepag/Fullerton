@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
-import {StyleSheet,Text,View,ActivityIndicator,TouchableOpacity,Image} from 'react-native'; 
+import {
+StyleSheet,
+Text,
+View,
+ActivityIndicator,
+TouchableOpacity,
+Image} from 'react-native'; 
 import axios from 'axios';
 import {getToken} from '../global/util';
 
@@ -39,7 +45,7 @@ export default class Main extends Component {
 				<View style={{flexDirection:'row',marginLeft:40,marginTop:125}} >
 
 
-					<TouchableOpacity style={{backgroundColor:'springgreen',width:'40%',borderRadius:3}} 
+					<TouchableOpacity style={{backgroundColor:'limegreen',width:'40%',borderRadius:3}} 
 					onPress={ () => this.props.navigation.navigate('Log') } >
 
 						<Text style={{textAlign:'center',margin:10,color:'black',fontWeight:'500',fontSize:20}} >
@@ -49,7 +55,7 @@ export default class Main extends Component {
 					</TouchableOpacity>
 
 
-					<TouchableOpacity style={{backgroundColor:'sandybrown',width:'40%',borderRadius:3,marginLeft:25}} 
+					<TouchableOpacity style={{backgroundColor:'tomato',width:'40%',borderRadius:3,marginLeft:25}} 
 					onPress={ () => this.props.navigation.navigate('Reg') } >
 
 						<Text style={{textAlign:'center',margin:10,color:'black',fontWeight:'500',fontSize:20}} >

@@ -4,7 +4,8 @@ View,
 Text,
 TextInput,
 TouchableOpacity,
-AsyncStorage
+AsyncStorage,
+Image
 } from 'react-native';
 import axios from 'axios';
 import {connect} from 'react-redux';
@@ -39,12 +40,15 @@ class Log extends Component {
 		}
 
 		return(
-			<View style={{flex:1,backgroundColor:'white'}} >
+			<View style={{flex:1,backgroundColor:'gainsboro'}} >
 
-				<Text style={{marginLeft:40,marginTop:40,fontSize:25,fontWeight:'bold',color:'seagreen'}} >
+				<Text style={{marginLeft:40,marginTop:40,fontSize:25,fontWeight:'bold',color:'goldenrod'}} >
 					Login Form
 				</Text>
 
+				<View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
+					<Image source={require('./googleplay.jpg')} style={{resizeMode:'contain',width:'50%',height:'50%'}} />
+				</View>
 
 				{this.state.messageSuccess !=='' && 
 					<Text style={{color:'green'}} >
@@ -59,7 +63,7 @@ class Log extends Component {
 				}
 
 
-				<View style={{marginLeft:40,marginTop:100}} >
+				<View style={{marginLeft:40,marginTop:0}} >
 
 					<TextInput style={{color:'black',width:'70%',fontSize:18}} placeholder="Email" 
 
@@ -73,7 +77,7 @@ class Log extends Component {
 				</View>
 
 
-				<View style={{flex:1,backgroundColor:'grey',marginTop:120}} >
+				<View style={{flex:1,backgroundColor:'indigo',marginTop:100}} >
 
 					<View style={{flexDirection:'row',marginLeft:40,marginTop:50}} >
 
@@ -86,7 +90,7 @@ class Log extends Component {
 
 						</TouchableOpacity>
 
-						<TouchableOpacity style={{backgroundColor:'black',width:'40%',borderRadius:5,marginLeft:25}} 
+						<TouchableOpacity style={{backgroundColor:'grey',width:'40%',borderRadius:5,marginLeft:25}} 
 						onPress={ () => this.props.navigation.goBack() } >
 
 							<Text style={{textAlign:'center',color:'white',margin:10,fontWeight:'500',fontSize:20}} >
