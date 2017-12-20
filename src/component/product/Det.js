@@ -36,19 +36,19 @@ class Det extends Component {
 
 		) : (
 
-			<View style={{flex:1,backgroundColor:'gold'}} >
+			<View style={{flex:1,backgroundColor:'#f49e33'}} >
 
 				<Image source={{uri:this.props.image}} style={{width:'100%',height:300,resizeMode:'contain'}} />
 
-				<Text style={{textAlign:'center',marginTop:10,fontWeight:'bold',fontSize:20}} >
+				<Text style={{textAlign:'center',marginTop:10,fontWeight:'bold',fontSize:35,color:'brown'}} >
 					{this.props.product_name}
 				</Text>
 
-				<Text style={{textAlign:'center',marginTop:20,fontWeight:'bold',fontSize:20}} >
-					{this.props.description}
+				<Text style={{textAlign:'center',marginBottom:20,fontWeight:'bold',fontSize:20,color:'green'}} >
+					{this.props.product_id}
 				</Text>
 
-				<Text style={{textAlign:'center',color:'tomato',fontWeight:'bold',fontSize:20}} >
+				<Text style={{textAlign:'center',color:'black',fontWeight:'bold',fontSize:20}} >
 					Rp. {numeral(this.props.price).format('0,0.00')}
 				</Text>
 

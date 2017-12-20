@@ -27,20 +27,20 @@ console.log(dataUser)
 
 	const registerHandler = (dataUser) => {
 		const {email,password} = dataUser
-		  //console.log(email,password)
+		  console.log(email,password)
 
 		if (email !=='' && password !=='') {
 			const dataPayloads = {
 				"email":email,
 				"password":password
 			}
-			  //console.log(dataPayloads)
+			  console.log(dataPayloads)
 
 			const url = `${BASE_API_URL}/Users`
-			  //console.log(url)
+			  console.log(url)
 			return axios.post(url,dataPayloads)
 				.then(res => {
-				  //console.log(res)
+				  console.log(res)
 					return res
 				})
 				.catch(err => {

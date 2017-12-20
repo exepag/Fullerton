@@ -55,9 +55,9 @@ class Prod extends Component {
 
 			</ScrollView>
 
-			<TouchableOpacity style={{backgroundColor:'peru'}} 
+			<TouchableOpacity style={{backgroundColor:'#f65c40'}} 
 			onPress={ () => this.props.dispatch(LogoutHandler()) } >
-				<Text style={{color:'black',fontSize:20,fontWeight:'600',textAlign:'center',marginTop:10,marginBottom:10}} >
+				<Text style={{color:'gainsboro',fontSize:18,fontWeight:'600',textAlign:'center',marginTop:10,marginBottom:10}} >
 					Log Out
 				</Text>
 			</TouchableOpacity>

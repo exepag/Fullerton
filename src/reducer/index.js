@@ -45,7 +45,7 @@ token:''
 			}
 
 		case`${REGISTER_USER}_FULFILLED`:
-		  //console.log(action.payload)
+		  console.log(action.payload)
 			return {
 				...state,
 				isFetching: false,
@@ -183,7 +183,6 @@ product_name:''
 		case `${FETCH_DATA_DETAILS}_REJECTED`:
 			return {
 				...state,
-				isFetching:false
 			}
 
 		default:

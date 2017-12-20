@@ -28,6 +28,8 @@ class Log extends Component {
 			password: this.state.password
 		}
 
+		this.setState({password:''})
+
 		this.props.dispatch(loginUser(data))
 	}
 
