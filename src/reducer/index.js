@@ -4,6 +4,7 @@ import {
 	FETCH_DATA,
 	REGISTER_USER,
 	LOGIN_USER,
+	LOGOUT_USER,
 	FETCH_PRODUCTS,
 	FETCH_DATA_DETAILS
 } from '../action/index';
@@ -44,11 +45,11 @@ token:''
 			}
 
 		case`${REGISTER_USER}_FULFILLED`:
-		console.log(action.payload)
+		  //console.log(action.payload)
 			return {
 				...state,
 				isFetching: false,
-				status: action.payloads.status == 200 ? ('Success Register') : ('Failed Registration')
+				status: action.payload.status === 200 ? ('Success Register') : ('Failed Registration')
 			}
 
 		case `${REGISTER_USER}_REJECTED`:
@@ -59,6 +60,8 @@ token:''
 
 
 
+
+
 		case `${LOGIN_USER}_PENDING`:
 			return {
 				...state,
@@ -66,7 +69,7 @@ token:''
 			}
 
 		case `${LOGIN_USER}_FULFILLED`:
-		console.log(action.payload)
+		  //console.log(action.payload)
 			return {
 				...state,
 				isFetching:false,
@@ -79,6 +82,29 @@ token:''
 				...state,
 				isFetching:false,
 			}
+
+
+
+
+
+		case `${LOGOUT_USER}_PENDING`:
+			return {
+				...state,
+				isFetching:true
+			}
+
+		case `${LOGOUT_USER}_REJECTED`:
+			return {
+				...state,
+			}
+
+		case `${LOGOUT_USER}_FULFILLED`:
+			return {
+				...state,
+				status: 'Success Log Out!'
+			}
+
+
 
 
 	default: return state

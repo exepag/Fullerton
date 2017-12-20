@@ -11,7 +11,7 @@ import axios from 'axios';
 import {fetchProducts} from '../../action';
 import {connect} from 'react-redux';
 import List from './List';
-
+import {LogoutHandler} from '../../action';
 
 
 class Prod extends Component {
@@ -32,6 +32,11 @@ class Prod extends Component {
 	render() {
 	console.log(this.props.products)
 		return (
+		    <View style={{flex:1}} >
+
+			{this.props.logout_status === 'Success Log Out!' &&
+				(this.props.navigation.goBack())
+			}
 
 			<ScrollView>
 
@@ -50,6 +55,14 @@ class Prod extends Component {
 
 			</ScrollView>
 
+			<TouchableOpacity style={{backgroundColor:'peru'}} 
+			onPress={ () => this.props.dispatch(LogoutHandler()) } >
+				<Text style={{color:'black',fontSize:20,fontWeight:'600',textAlign:'center',marginTop:10,marginBottom:10}} >
+					Log Out
+				</Text>
+			</TouchableOpacity>
+
+		    </View>
 		);
 	}
 }
@@ -58,6 +71,7 @@ class Prod extends Component {
 
 const mapStateToProps = (state) => {
 	return {
+		logout_status: state.user.status,
 		isFetching: state.products.isFetching,
 		products: state.products.items
 	}
